@@ -52,10 +52,13 @@ func callbackHandler(w http.ResponseWriter, r *http.Request) {
 					if _, err = bot.ReplyMessage(event.ReplyToken, linebot.NewTextMessage(message.ID+":"+message.Text+" 1111111OK!混蛋啦"+TextMessage+*linebot.TextMessage)).Do(); err != nil {
 						log.Print(err)
 					}
-				case "今日運勢":
-					if _, err = bot.ReplyMessage(event.ReplyToken, linebot.NewTextMessage("節制")).Do(); err != nil {
-						log.Print(err)
-					}
+					fmt.Println("hello world")
+					fmt.Println(*linebot.TextMessage)
+					fmt.Println(message)
+				//case "今日運勢":
+				//	if _, err = bot.ReplyMessage(event.ReplyToken, linebot.NewTextMessage("節制")).Do(); err != nil {
+				//		log.Print(err)
+				//	}
 			}
 		}
 	}

@@ -54,7 +54,7 @@ func callbackHandler(w http.ResponseWriter, r *http.Request) {
 					//; err != nil {
 					//	log.Print(err)
 					//}
-					//bot.ReplyMessage(event.ReplyToken, //linebot.NewTextMessage(message.ID+":"+message.Text+" 1111111OK!混蛋啦"))
+					bot.ReplyMessage(event.ReplyToken, linebot.NewTextMessage(message.ID+":"+message.Text+" 22222OK!混蛋啦")).Do()
 			}
 		}
 	}

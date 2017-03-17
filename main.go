@@ -52,10 +52,9 @@ func callbackHandler(w http.ResponseWriter, r *http.Request) {
 					//if _, err = 
 					if message.Text=="早餐"{
 						bot.ReplyMessage(event.ReplyToken, linebot.NewTextMessage("去吃屎吧")).Do()
-					} else message.Text=="午餐"{
+					} else if message.Text=="午餐"{
 						bot.ReplyMessage(event.ReplyToken, linebot.NewTextMessage("不要吃啦")).Do()
-					}
- else {
+					} else {
 						bot.ReplyMessage(event.ReplyToken, linebot.NewTextMessage(message.Text+"\r\n"+"嗨啊早餐吃了沒")).Do()
 					}
 					//; err != nil {

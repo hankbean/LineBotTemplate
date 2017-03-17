@@ -17,7 +17,7 @@ import (
 	"log"
 	"net/http"
 	"os"
-	"math/rand"
+	"math"
 	"time"
 	
 	"github.com/line/line-bot-sdk-go/linebot"

@@ -74,8 +74,8 @@ func callbackHandler(w http.ResponseWriter, r *http.Request) {
 							"My sources say no",
 							"Outlook not so good",
 							"Very doubtful",
-	}
-						bot.ReplyMessage(event.ReplyToken, linebot.NewTextMessage(answers[rand.Intn(len(answers)))).Do()
+						}
+						bot.ReplyMessage(event.ReplyToken, linebot.NewTextMessage(answers[rand.Intn(len(answers))])).Do()
 					} else if message.Text=="午餐"{
 						bot.ReplyMessage(event.ReplyToken, linebot.NewTextMessage("不要吃啦")).Do()
 					} else {

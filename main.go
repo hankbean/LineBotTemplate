@@ -51,7 +51,7 @@ func callbackHandler(w http.ResponseWriter, r *http.Request) {
 				case *linebot.TextMessage:
 					//if _, err = 
 					if message.Text=="早餐"{
-						bot.ReplyMessage(event.ReplyToken, linebot.NewTextMessage("去吃屎吧"<--早餐變數-->)).Do()
+						bot.ReplyMessage(event.ReplyToken, linebot.NewTextMessage("去吃屎吧")).Do()
 					} else message.Text=="午餐"{
 						bot.ReplyMessage(event.ReplyToken, linebot.NewTextMessage("不要吃啦")).Do()
 					}

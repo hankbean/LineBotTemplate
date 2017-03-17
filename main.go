@@ -52,7 +52,7 @@ func callbackHandler(w http.ResponseWriter, r *http.Request) {
 				case *linebot.TextMessage:
 					//if _, err = 
 					if message.Text=="早餐"{
-						rand.Seed(42) // Try changing this number!
+						rand.Seed(time.Now().UnixNano()) // Try changing this number!
 						answers := []string{
 							"It is certain",
 							"It is decidedly so",

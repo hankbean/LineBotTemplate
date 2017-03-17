@@ -105,7 +105,7 @@ func callbackHandler(w http.ResponseWriter, r *http.Request) {
 						}
 						bot.ReplyMessage(event.ReplyToken, linebot.NewTextMessage(answers[rand.Intn(len(answers))])).Do()
 					} else {
-						bot.ReplyMessage(event.ReplyToken, linebot.NewTextMessage(message.Text+"指令清單\r\n"+"早餐/午餐/晚餐\r\n今日運勢")).Do()
+						bot.ReplyMessage(event.ReplyToken, linebot.NewTextMessage("指令清單\r\n"+"早餐/午餐/晚餐\r\n今日運勢")).Do()
 					}
 					//; err != nil {
 					//	log.Print(err)

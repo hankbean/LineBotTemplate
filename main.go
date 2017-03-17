@@ -49,9 +49,15 @@ func callbackHandler(w http.ResponseWriter, r *http.Request) {
 		if event.Type == linebot.EventTypeMessage {
 			switch message := event.Message.(type) {
 				case *linebot.TextMessage:
-					if _, err = bot.ReplyMessage(event.ReplyToken, linebot.NewTextMessage(message.ID+":"+message.Text+" 1111111OK!混蛋啦")).Do(); err != nil {
-						log.Print(err)
+					//if _, err = 
+					if message.Text="早餐"{
+						bot.ReplyMessage(event.ReplyToken, linebot.NewTextMessage("去吃屎吧")).Do()
+					} else {
+						bot.ReplyMessage(event.ReplyToken, linebot.NewTextMessage(message.Text+"\r\n"+"嗨啊早餐吃了沒")).Do()
 					}
+					//; err != nil {
+					//	log.Print(err)
+					//}
 					//fmt.Println("hello world")
 					//fmt.Println(message.ID)
 				//case "今日運勢":

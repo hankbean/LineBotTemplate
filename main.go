@@ -52,7 +52,7 @@ func callbackHandler(w http.ResponseWriter, r *http.Request) {
 			switch message := event.Message.(type) {
 				case *linebot.TextMessage:
 					//if _, err = 
-					if message.Text=="早餐"or"午餐"or"晚餐"{
+					if message.Text=="早餐"||"午餐"||"晚餐"{
 						rand.Seed(time.Now().UnixNano()) // Try changing this number!
 						answers := []string{
 							"感恩",

@@ -52,60 +52,35 @@ func callbackHandler(w http.ResponseWriter, r *http.Request) {
 			switch message := event.Message.(type) {
 				case *linebot.TextMessage:
 					//if _, err = 
-					if message.Text=="早餐"or"午餐"or"晚餐"{
+					if message.Text=="早餐"{
 						rand.Seed(time.Now().UnixNano()) // Try changing this number!
 						answers := []string{
-							"感恩",
-							"愛瘋",
-							"華美",
-							"鐵板",
-							"滷味",
-							"7-11",
-							"全家",
-							"台南意麵",
-							"淡江",
-							"輔大",
-							"赤鳥家",
-							"要減肥了",
-							"台北城",
-							"台北煮",
-							"十全",
-							"麥當勞",
-							"學餐",
-							"阿羅哈",
-							"大Q",
-							"大紅袍",
+							"It is certain",
+							"It is decidedly so",
+							"Without a doubt",
+							"Yes definitely",
+							"You may rely on it",
+							"As I see it yes",
+							"Most likely",
+							"Outlook good",
+							"Yes",
+							"Signs point to yes",
+							"Reply hazy try again",
+							"Ask again later",
+							"Better not tell you now",
+							"Cannot predict now",
+							"Concentrate and ask again",
+							"Don't count on it",
+							"My reply is no",
+							"My sources say no",
+							"Outlook not so good",
+							"Very doubtful",
 						}
 						bot.ReplyMessage(event.ReplyToken, linebot.NewTextMessage(answers[rand.Intn(len(answers))])).Do()
-					} else if message.Text=="今日運勢"{
-						rand.Seed(time.Now().UnixNano()) // Try changing this number!
-						answers := []string{
-							"愚人",
-							"魔術師",
-							"女教皇",
-							"皇后",
-							"國王",
-							"教皇",
-							"戀人",
-							"戰車",
-							"力量",
-							"隱者",
-							"命運之輪",
-							"正義",
-							"吊人",
-							"死神",
-							"節制",
-							"惡魔",
-							"塔",
-							"星星",
-							"月亮",
-							"太陽",
-							"審判",
-							"世界",
-						}
-						bot.ReplyMessage(event.ReplyToken, linebot.NewTextMessage(answers[rand.Intn(len(answers))])).Do()
+					} else if message.Text=="午餐"{
+						bot.ReplyMessage(event.ReplyToken, linebot.NewTextMessage("不要吃啦")).Do()
 					} else {
-						bot.ReplyMessage(event.ReplyToken, linebot.NewTextMessage(message.Text+"指令清單\r\n"+"早餐/午餐/晚餐\r\n今日運勢")).Do()
+						bot.ReplyMessage(event.ReplyToken, linebot.NewTextMessage(message.Text+"\r\n"+"嗨啊早餐吃了沒")).Do()
 					}
 					//; err != nil {
 					//	log.Print(err)
@@ -116,7 +91,6 @@ func callbackHandler(w http.ResponseWriter, r *http.Request) {
 				//	if _, err = bot.ReplyMessage(event.ReplyToken, linebot.NewTextMessage("節制")).Do(); err != nil {
 				//		log.Print(err)
 				//	}
-				//bot.ReplyMessage(event.ReplyToken, linebot.NewTextMessage(message.Text+"\r\n"+"嗨啊早餐吃了沒")).Do()
 			}
 		}
 	}

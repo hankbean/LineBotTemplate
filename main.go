@@ -108,8 +108,8 @@ func callbackHandler(w http.ResponseWriter, r *http.Request) {
 							"正位",
 							"逆位",
 						}
-						bot.ReplyMessage(event.ReplyToken, linebot.NewTextMessage(turn[rand.Intn(len(turn))]+answers[rand.Intn(len(answers))])).Do()
-					
+						bot.ReplyMessage(event.ReplyToken, linebot.NewTextMessage(turn[rand.Intn(len(turn))])).Do()
+					//+answers[rand.Intn(len(answers))]
 					} else if message.Text=="我是中二豆"{
 						bot.ReplyMessage(event.ReplyToken, linebot.NewTextMessage("不...你是豆神！")).Do()
 

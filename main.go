@@ -103,7 +103,11 @@ func callbackHandler(w http.ResponseWriter, r *http.Request) {
 							"審判",
 							"世界",
 						}
-						bot.ReplyMessage(event.ReplyToken, linebot.NewTextMessage(answers[rand.Intn(len(answers))])).Do()
+						turn := []string{
+							"正位",
+							"逆位",
+						}
+						bot.ReplyMessage(event.ReplyToken, linebot.NewTextMessage(turn[rand.Intn(len(answers))]+answers[rand.Intn(len(answers))])).Do()
 					} else {
 						bot.ReplyMessage(event.ReplyToken, linebot.NewTextMessage("指令清單\r\n"+"早餐/午餐/晚餐\r\n今日運勢")).Do()
 					}

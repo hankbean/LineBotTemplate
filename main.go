@@ -77,6 +77,7 @@ func callbackHandler(w http.ResponseWriter, r *http.Request) {
 							"大紅袍",
 						}
 						bot.ReplyMessage(event.ReplyToken, linebot.NewTextMessage(answers[rand.Intn(len(answers))])).Do()
+					
 					} else if message.Text=="今日運勢"{
 						rand.Seed(time.Now().UnixNano()) // Try changing this number!
 						answers := []string{
@@ -108,6 +109,10 @@ func callbackHandler(w http.ResponseWriter, r *http.Request) {
 							"逆位",
 						}
 						bot.ReplyMessage(event.ReplyToken, linebot.NewTextMessage(turn[rand.Intn(len(answers))]+answers[rand.Intn(len(answers))])).Do()
+					
+					} else if message.Text=="我是中二豆"{
+						bot.ReplyMessage(event.ReplyToken, linebot.NewTextMessage("不...你是豆神！")).Do()
+
 					} else {
 						bot.ReplyMessage(event.ReplyToken, linebot.NewTextMessage("指令清單\r\n"+"早餐/午餐/晚餐\r\n今日運勢")).Do()
 					}

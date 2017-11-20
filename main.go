@@ -108,10 +108,52 @@ func callbackHandler(w http.ResponseWriter, r *http.Request) {
 							"正位",
 							"逆位",
 						}
-						bot.ReplyMessage(event.ReplyToken, linebot.NewTextMessage(turn[rand.Intn(len(answers))]+answers[rand.Intn(len(answers))])).Do()
+						bot.ReplyMessage(event.ReplyToken, linebot.NewTextMessage(turn[rand.Intn(len(turn))]+answers[rand.Intn(len(answers))])).Do()
 					
 					} else if message.Text=="我是中二豆"{
 						bot.ReplyMessage(event.ReplyToken, linebot.NewTextMessage("不...你是豆神！")).Do()
+
+					} else if message.Text=="厨ニ" || message.Text=="廚二"{
+						rand.Seed(time.Now().UnixNano()) // Try changing this number!
+						answers := []string{
+							"爆裂吧，現實。迸裂吧，精神。放逐這個世界！",
+							"闇のほのにだかえで　消えろ!!",
+							"闇の炎に抱かれて死ね！",
+							"El Psy Congroo",
+							"隐藏着黑暗力量的钥匙啊!
+							在我面前显示出你真正的力量,
+							与你定下约定的小櫻命令你,
+							封印解除!",
+							"我要代表月亮，消灭你！~",
+							"武藏：「既然你诚心诚意的请教了！」
+							小次郎：「我们就大发慈悲的告诉你！」
+							武藏：「为了防止世界被破坏！」
+							小次郎：「为了守护世界的和平！」
+							武藏：「贯彻爱与真实的邪恶！」
+							小次郎：「可爱又迷人的反派角色！」
+							武藏！ 小次郎！
+							武藏：「我们是穿梭在银河的火箭队（二人组）！」
+							小次郎：「白洞！白色的明天在等著我们！」
+							喵喵：「喵～就是这样！」",
+							"生きているものなら、神様も杀して见せる。",
+							"只要是活着的东西，就算是神我也杀给你看 。",
+							"僕は新世界の神となる!",
+							"真実はいつも一つ！！",
+							"真相只有一个！！",
+							"人被杀，就会死",
+							"东中出身 凉宫ハルヒ 
+ただの人间には兴味ありません 
+この中に宇宙人 ·未来人·超能力者がいだら 
+あたしのところに来なさいっ 
+以上 ",
+							"你已經死了！",
+							"我要成為新世界的神！",
+							"愉悅！",
+							"你那無聊的幻想由我來打破！",
+							"一切都是命運石之門的選擇！",
+							"我不做人啦！JOJO",
+						}
+						bot.ReplyMessage(event.ReplyToken, linebot.NewTextMessage(answers[rand.Intn(len(answers))])).Do()
 
 					} else {
 						bot.ReplyMessage(event.ReplyToken, linebot.NewTextMessage("指令清單\r\n"+"早餐/午餐/晚餐\r\n今日運勢")).Do()

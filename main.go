@@ -53,19 +53,20 @@ func callbackHandler(w http.ResponseWriter, r *http.Request) {
 				case *linebot.TextMessage:
 					//if _, err = 
 					if message.Text=="早餐" || message.Text=="午餐"  || message.Text=="晚餐"{
-						bot.ReplyMessage(event.ReplyToken, linebot.NewTextMessage("早中晚？(有bug晚點修 可以催稿)")).Do()
+						//bot.ReplyMessage(event.ReplyToken, linebot.NewTextMessage("早中晚？(有bug晚點修 可以催稿)")).Do()
 						if message.Text=="早餐"{
 						rand.Seed(time.Now().UnixNano()) // Try changing this number!
 						answers := []string{
 							"全家",
-							"愛瘋",
-							"華美",
-							"鐵板",
+							"愛瘋牛排",
+							"華美自助餐",
+							"華美丼飯",
+							"鐵板便當",
 							"滷味",
 							"7-11",
 							"全家",
 							"台南意麵",
-							"淡江",
+							"淡江炒飯",
 							"Xbuger",
 							"赤鳥家",
 							"要減肥了",
@@ -128,7 +129,7 @@ func callbackHandler(w http.ResponseWriter, r *http.Request) {
 							"大Q",
 							"大紅袍",
 						}
-						bot.ReplyMessage(event.ReplyToken, linebot.NewTextMessage(answers[rand.Intn(len(answers))])).Do()
+						bot.ReplyMessage(event.ReplyToken, linebot.NewTextMessage("早中晚？(有bug晚點修 可以催稿)")).Do()
 						} else {
 						bot.ReplyMessage(event.ReplyToken, linebot.NewTextMessage("指令錯誤")).Do()
 						}
@@ -216,8 +217,8 @@ func callbackHandler(w http.ResponseWriter, r *http.Request) {
 						}
 						bot.ReplyMessage(event.ReplyToken, linebot.NewTextMessage(turn[rand.Intn(len(turn))]+answers[rand.Intn(len(answers))])).Do()
 					
-					} else if message.Text=="我是中二豆"{
-						bot.ReplyMessage(event.ReplyToken, linebot.NewTextMessage("不...你是豆神！")).Do()
+					} else if message.Text=="艾路"{
+						bot.ReplyMessage(event.ReplyToken, linebot.NewTextMessage("卡娜赫拉")).Do()
 
 					} else if message.Text=="厨ニ" || message.Text=="廚二"{
 						rand.Seed(time.Now().UnixNano()) // Try changing this number!

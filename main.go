@@ -52,7 +52,32 @@ func callbackHandler(w http.ResponseWriter, r *http.Request) {
 			switch message := event.Message.(type) {
 				case *linebot.TextMessage:
 					//if _, err = 
-					if message.Text=="早餐" || message.Text=="午餐" || message.Text=="晚餐"{
+					if message.Text=="早餐"{
+						rand.Seed(time.Now().UnixNano()) // Try changing this number!
+						answers := []string{
+							"全家",
+							"愛瘋",
+							"華美",
+							"鐵板",
+							"滷味",
+							"7-11",
+							"全家",
+							"台南意麵",
+							"淡江",
+							"Xbuger",
+							"赤鳥家",
+							"要減肥了",
+							"台北城",
+							"台北煮",
+							"十全",
+							"麥當勞",
+							"學餐",
+							"阿羅哈",
+							"大Q",
+							"大紅袍",
+						}
+						bot.ReplyMessage(event.ReplyToken, linebot.NewTextMessage(answers[rand.Intn(len(answers))])).Do()
+					} else if message.Text=="午餐"{
 						rand.Seed(time.Now().UnixNano()) // Try changing this number!
 						answers := []string{
 							"感恩",
@@ -77,7 +102,31 @@ func callbackHandler(w http.ResponseWriter, r *http.Request) {
 							"大紅袍",
 						}
 						bot.ReplyMessage(event.ReplyToken, linebot.NewTextMessage(answers[rand.Intn(len(answers))])).Do()
-					
+					} else if message.Text=="晚餐"{
+							rand.Seed(time.Now().UnixNano()) // Try changing this number!
+						answers := []string{
+							"感恩",
+							"愛瘋",
+							"華美",
+							"鐵板",
+							"滷味",
+							"7-11",
+							"全家",
+							"台南意麵",
+							"淡江炒飯",
+							"輔大豬排",
+							"赤鳥家",
+							"要減肥了",
+							"台北城",
+							"台北煮",
+							"十全",
+							"麥當勞",
+							"學餐",
+							"宵夜快餐",
+							"大Q",
+							"大紅袍",
+						}
+						bot.ReplyMessage(event.ReplyToken, linebot.NewTextMessage(answers[rand.Intn(len(answers))])).Do()
 					} else if message.Text=="今日運勢"{
 						rand.Seed(time.Now().UnixNano()) // Try changing this number!
 						answers := []string{
@@ -140,7 +189,8 @@ func callbackHandler(w http.ResponseWriter, r *http.Request) {
 						bot.ReplyMessage(event.ReplyToken, linebot.NewTextMessage(answers[rand.Intn(len(answers))])).Do()
 
 					} else {
-						bot.ReplyMessage(event.ReplyToken, linebot.NewTextMessage("指令清單\r\n"+"早餐/午餐/晚餐\r\n今日運勢")).Do()
+						//bot.ReplyMessage(event.ReplyToken, linebot.NewTextMessage("指令清單\r\n"+"早餐/午餐/晚餐\r\n今日運勢")).Do()
+						bot.ReplyMessage(event.ReplyToken, linebot.NewTextMessage("魔法指令有誤")).Do()
 					}
 					//; err != nil {
 					//	log.Print(err)

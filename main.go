@@ -228,7 +228,9 @@ func callbackHandler(w http.ResponseWriter, r *http.Request) {
 
 					} else {
 						//bot.ReplyMessage(event.ReplyToken, linebot.NewTextMessage("指令清單\r\n"+"早餐/午餐/晚餐\r\n今日運勢")).Do()
-						bot.ReplyMessage(event.ReplyToken, linebot.NewTextMessage("魔法指令有誤")).Do()
+						
+
+						//bot.ReplyMessage(event.ReplyToken, linebot.NewTextMessage("魔法指令有誤")).Do()
 					}
 					//; err != nil {
 					//	log.Print(err)

@@ -277,9 +277,8 @@ func callbackHandler(w http.ResponseWriter, r *http.Request) {
 						ifNum :=  rand.Intn(10)
 						if (ifNum==1){
 							bot.ReplyMessage(event.ReplyToken, linebot.NewTextMessage(answers[rand.Intn(len(answers))]+"debug: "+ifNum)).Do()
-						}
-						else{
-							bot.ReplyMessage(event.ReplyToken, linebot.NewTextMessage("debug: "+ifNum)).Do()
+						} else {
+							//bot.ReplyMessage(event.ReplyToken, linebot.NewTextMessage("debug: "+ifNum)).Do()
 						}
 						//bot.ReplyMessage(event.ReplyToken, linebot.NewTextMessage("指令清單\r\n"+"早餐/午餐/晚餐\r\n今日運勢")).Do()
 						

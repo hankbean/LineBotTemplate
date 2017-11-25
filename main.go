@@ -52,9 +52,11 @@ func callbackHandler(w http.ResponseWriter, r *http.Request) {
 			switch message := event.Message.(type) {
 				case *linebot.TextMessage:
 					//if _, err = 
-					if message.Text=="早餐" || message.Text=="午餐"  || message.Text=="晚餐"{
+
+					fmt.Println(message.Text)
+					if message.Text=="早餐" || message.Text=="午餐"  || message.Text=="晚餐"|| message.Text=="吃什麼"{
 						//bot.ReplyMessage(event.ReplyToken, linebot.NewTextMessage("早中晚？(有bug晚點修 可以催稿)")).Do()
-						if message.Text=="早餐"{
+						if message.Text=="吃什麼"{
 						rand.Seed(time.Now().UnixNano()) // Try changing this number!
 						answers := []string{
 							"全家",
@@ -274,9 +276,8 @@ func callbackHandler(w http.ResponseWriter, r *http.Request) {
 							"那天看中醫 醫師問我 是不是冬天都會感到特別冷 喝太多水就想尿尿",
 							"只要每天省下買一杯奶茶的錢，十天後就能買十杯奶茶",
 						}
-						var ifNum = rand.Intn(10)
-						fmt.Println(ifNum)
-						if (ifNum==1){
+						var ifNum = rand.Intn(9)
+						if (ifNum==0){
 							bot.ReplyMessage(event.ReplyToken, linebot.NewTextMessage(answers[rand.Intn(len(answers))])).Do()
 						} else {
 							//bot.ReplyMessage(event.ReplyToken, linebot.NewTextMessage("debug: "+ifNum)).Do()

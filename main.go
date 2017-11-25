@@ -275,8 +275,9 @@ func callbackHandler(w http.ResponseWriter, r *http.Request) {
 							"只要每天省下買一杯奶茶的錢，十天後就能買十杯奶茶",
 						}
 						var ifNum = rand.Intn(10)
+						fmt.Println(ifNum)
 						if (ifNum==1){
-							bot.ReplyMessage(event.ReplyToken, linebot.NewTextMessage(answers[rand.Intn(len(answers))]+"debug: "+string(ifNum))).Do()
+							bot.ReplyMessage(event.ReplyToken, linebot.NewTextMessage(answers[rand.Intn(len(answers))])).Do()
 						} else {
 							//bot.ReplyMessage(event.ReplyToken, linebot.NewTextMessage("debug: "+ifNum)).Do()
 						}

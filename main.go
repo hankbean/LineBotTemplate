@@ -274,10 +274,13 @@ func callbackHandler(w http.ResponseWriter, r *http.Request) {
 							"那天看中醫 醫師問我 是不是冬天都會感到特別冷 喝太多水就想尿尿",
 							"只要每天省下買一杯奶茶的錢，十天後就能買十杯奶茶",
 						}
-						if (rand.Intn(10)==1){
-							bot.ReplyMessage(event.ReplyToken, linebot.NewTextMessage(answers[rand.Intn(len(answers))])).Do()
+						ifNum :=  rand.Intn(10)
+						if (ifNum==1){
+							bot.ReplyMessage(event.ReplyToken, linebot.NewTextMessage(answers[rand.Intn(len(answers))]+"debug: "+ifNum)).Do()
 						}
-
+						else{
+							bot.ReplyMessage(event.ReplyToken, linebot.NewTextMessage("debug: "+ifNum)).Do()
+						}
 						//bot.ReplyMessage(event.ReplyToken, linebot.NewTextMessage("指令清單\r\n"+"早餐/午餐/晚餐\r\n今日運勢")).Do()
 						
 

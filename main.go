@@ -33,8 +33,8 @@ func main() {
     defer f.Close()
     log.SetOutput(f)
     log.Println("This is a test log entry")
-	
-	var err error
+
+	//var err error
 	bot, err = linebot.New(os.Getenv("ChannelSecret"), os.Getenv("ChannelAccessToken"))
 	log.Println("Bot:", bot, " err:", err)
 	http.HandleFunc("/callback", callbackHandler)

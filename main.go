@@ -226,6 +226,9 @@ func callbackHandler(w http.ResponseWriter, r *http.Request) {
 						}
 						bot.ReplyMessage(event.ReplyToken, linebot.NewTextMessage(answers[rand.Intn(len(answers))])).Do()
 
+					} else if message.Text=="豆豆" || message.Text=="吳浩宇"{
+						bot.ReplyMessage(event.ReplyToken, linebot.NewTextMessage("我不是變態...我是豆神!!")).Do()
+
 					} else {
 						//bot.ReplyMessage(event.ReplyToken, linebot.NewTextMessage("指令清單\r\n"+"早餐/午餐/晚餐\r\n今日運勢")).Do()
 						

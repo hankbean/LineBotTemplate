@@ -244,6 +244,9 @@ func callbackHandler(w http.ResponseWriter, r *http.Request) {
 					} else if message.Text=="萱萱"{
 						bot.ReplyMessage(event.ReplyToken, linebot.NewTextMessage("你找躍萱還是玥萱")).Do()
 
+					} else if message.Text=="大腸包小腸"{
+						bot.ReplyMessage(event.ReplyToken, linebot.NewTextMessage("チンチン大きいです")).Do()
+
 					} else {
 						//bot.ReplyMessage(event.ReplyToken, linebot.NewTextMessage("指令清單\r\n"+"早餐/午餐/晚餐\r\n今日運勢")).Do()
 						

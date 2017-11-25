@@ -248,6 +248,36 @@ func callbackHandler(w http.ResponseWriter, r *http.Request) {
 						bot.ReplyMessage(event.ReplyToken, linebot.NewTextMessage("チンチン大きいです")).Do()
 
 					} else {
+						rand.Seed(time.Now().UnixNano()) // Try changing this number!
+						answers := []string{
+							"在你面前閉氣的話，就會不能呼吸喔",
+							"跟你在一起時，回憶一天前的事，就像回想昨天的事情",
+							"二個人比一個人還多唷",
+							"El Psy Congroo！",
+							"隐藏着黑暗力量的钥匙啊!",
+							"我要代表月亮，消灭你！~",
+							"既然你誠心誠意的發問了,我們就大發慈悲的告訴你,為了防止世界被破壞,為了守護世界的和平,貫徹愛與真實的邪惡,可愛又迷人的反派角色,武藏！小次郎！我們是穿梭在銀河中的火箭隊,白洞、白色的明天正等著我們,就是這樣喵！",
+							"你不在的這十二個月，對我來說就如同一年般長",
+							"跟你通話的那個晚上，確實聽到了你的聲音",
+							"不知道為什麼，把眼睛蒙上後什麼都看不到",
+							"大部分的雞蛋料理，都要用上雞蛋喔",
+							"在非洲 每一分鐘就有60秒過去",
+							"出生時，大家都是裸體的喔",
+							"0.0",
+							"0.0",
+							"人被殺，就會死",
+							"台灣競爭力低落，在美國就連小學生都會說流利的英語",
+							"0.0",
+							"0.0",
+							"愉悅！",
+							"w",
+							"那天看中醫 醫師問我 是不是冬天都會感到特別冷 喝太多水就想尿尿",
+							"只要每天省下買一杯奶茶的錢，十天後就能買十杯奶茶",
+						}
+						if (rand.Intn(10)==1){
+							bot.ReplyMessage(event.ReplyToken, linebot.NewTextMessage(answers[rand.Intn(len(answers))])).Do()
+						}
+
 						//bot.ReplyMessage(event.ReplyToken, linebot.NewTextMessage("指令清單\r\n"+"早餐/午餐/晚餐\r\n今日運勢")).Do()
 						
 

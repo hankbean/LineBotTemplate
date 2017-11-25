@@ -229,6 +229,15 @@ func callbackHandler(w http.ResponseWriter, r *http.Request) {
 					} else if message.Text=="豆豆" || message.Text=="吳浩宇"{
 						bot.ReplyMessage(event.ReplyToken, linebot.NewTextMessage("我不是變態...我是豆神!!")).Do()
 
+					} else if message.Text=="祥瑀" || message.Text=="黃祥瑀"{
+						bot.ReplyMessage(event.ReplyToken, linebot.NewTextMessage("約炮小王子")).Do()
+
+					} else if message.Text=="于姿婷"{
+						bot.ReplyMessage(event.ReplyToken, linebot.NewTextMessage("烤土司小公主")).Do()
+
+					} else if message.Text=="博榮" || message.Text=="榮榮" || message.Text=="王博榮"{
+						bot.ReplyMessage(event.ReplyToken, linebot.NewTextMessage("封杯小王子")).Do()
+
 					} else {
 						//bot.ReplyMessage(event.ReplyToken, linebot.NewTextMessage("指令清單\r\n"+"早餐/午餐/晚餐\r\n今日運勢")).Do()
 						

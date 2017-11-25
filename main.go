@@ -239,7 +239,7 @@ func callbackHandler(w http.ResponseWriter, r *http.Request) {
 						bot.ReplyMessage(event.ReplyToken, linebot.NewTextMessage("封杯小王子")).Do()
 
 					} else if message.Text=="躍萱" || message.Text=="黃躍萱"{
-						bot.ReplyMessage(event.ReplyToken, linebot.NewTextMessage("封杯小王子")).Do()
+						bot.ReplyMessage(event.ReplyToken, linebot.NewTextMessage("黃色洨話大賽冠軍")).Do()
 
 					} else if message.Text=="萱萱"{
 						bot.ReplyMessage(event.ReplyToken, linebot.NewTextMessage("你找躍萱還是玥萱")).Do()

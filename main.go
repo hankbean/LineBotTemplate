@@ -56,7 +56,7 @@ func callbackHandler(w http.ResponseWriter, r *http.Request) {
 					fmt.Println(message.Text)
 					if message.Text=="早餐" || message.Text=="午餐"  || message.Text=="晚餐"|| message.Text=="吃什麼"{
 						//bot.ReplyMessage(event.ReplyToken, linebot.NewTextMessage("早中晚？(有bug晚點修 可以催稿)")).Do()
-						if message.Text=="吃什麼"{
+						if message.Text=="早餐" || message.Text=="午餐"  || message.Text=="晚餐"|| message.Text=="吃什麼"{
 						rand.Seed(time.Now().UnixNano()) // Try changing this number!
 						answers := []string{
 							"全家",
@@ -82,7 +82,7 @@ func callbackHandler(w http.ResponseWriter, r *http.Request) {
 							"大紅袍",
 						}
 						bot.ReplyMessage(event.ReplyToken, linebot.NewTextMessage(answers[rand.Intn(len(answers))])).Do()
-						} else if message.Text=="午餐"{
+						} else if message.Text=="a午餐"{
 						rand.Seed(time.Now().UnixNano()) // Try changing this number!
 						answers := []string{
 							"感恩",
@@ -107,10 +107,10 @@ func callbackHandler(w http.ResponseWriter, r *http.Request) {
 							"大紅袍",
 						}
 							bot.ReplyMessage(event.ReplyToken, linebot.NewTextMessage(answers[rand.Intn(len(answers))])).Do()
-						} else if message.Text=="晚餐"{
+						} else if message.Text=="a晚餐"{
 							bot.ReplyMessage(event.ReplyToken, linebot.NewTextMessage("早中晚？(有bug晚點修 可以催稿)")).Do()
 						} else {
-							bot.ReplyMessage(event.ReplyToken, linebot.NewTextMessage("指令錯誤")).Do()
+							// bot.ReplyMessage(event.ReplyToken, linebot.NewTextMessage("指令錯誤")).Do()
 						}
 
 
@@ -279,7 +279,7 @@ func callbackHandler(w http.ResponseWriter, r *http.Request) {
 							"為什麼自古以來紅顏多薄命呢 因為根本沒人在乎醜的人活多久",
 							"為什麼襪子總會不見一隻 因為不見兩隻你根本不會發現",
 							"根據研究，在北京呼吸霾霧很可怕，每過1小時，會折損3600秒的壽命",
-							"為什麼吳浩宇那麼醜，不知道，也沒人想知道",
+							// "為什麼吳浩宇那麼醜，不知道，也沒人想知道",
 							"戒菸很簡單，我已經戒過好幾次了",
 							"當黑人演員很慘，他們永遠只能演黑人",
 							"人要是死了 那就真的死了",

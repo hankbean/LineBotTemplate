@@ -233,7 +233,7 @@ func callbackHandler(w http.ResponseWriter, r *http.Request) {
 
 						var ifNumA = rand.Intn(78-1)
 
-						if (0>=ifNumA<=21){
+						if (0>ifNumA<21){
 							mesText = turn[rand.Intn(len(turn))] + majorArcana[rand.Intn(len(majorArcana))]
 						} else {
 							mesText = turn[rand.Intn(len(turn))] + minorArcanaName[rand.Intn(len(minorArcanaName))] + minorArcanaNum[rand.Intn(len(minorArcanaNum))]

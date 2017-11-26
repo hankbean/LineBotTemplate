@@ -172,9 +172,17 @@ func callbackHandler(w http.ResponseWriter, r *http.Request) {
 							"大紅袍",
 						}
 						bot.ReplyMessage(event.ReplyToken, linebot.NewTextMessage(answers[rand.Intn(len(answers))])).Do()
-					} else if message.Text=="今日運勢"{
+					} else if message.Text=="抽牌"{
 						rand.Seed(time.Now().UnixNano()) // Try changing this number!
-						answers := []string{
+						
+						mesText := "";
+
+						turn := []string{
+							"正位",
+							"逆位",
+						}
+
+						majorArcana := []string{
 							"愚人",
 							"魔術師",
 							"女教皇",
@@ -198,11 +206,40 @@ func callbackHandler(w http.ResponseWriter, r *http.Request) {
 							"審判",
 							"世界",
 						}
-						turn := []string{
-							"正位",
-							"逆位",
+						
+						minorArcanaName := []string{
+							"劍"
+							"杖"
+							"杯"
+							"幣"
 						}
-						bot.ReplyMessage(event.ReplyToken, linebot.NewTextMessage(turn[rand.Intn(len(turn))]+answers[rand.Intn(len(answers))])).Do()
+
+						minorArcanaNum := []string{
+							"1"
+							"2"
+							"3"
+							"4"
+							"5"
+							"6"
+							"7"
+							"8"
+							"9"
+							"10"
+							"侍從"
+							"騎士"
+							"皇后"
+							"國王"
+						}
+
+						var ifNumA = rand.Intn(78-1)
+						
+						if ((1-1)<=ifNumA>=(22-1)){
+							mesText = turn[rand.Intn(len(turn))] + answers[rand.Intn(len(answers))]
+						} else {
+							mesText = turn[rand.Intn(len(turn))] + minorArcanaName[rand.Intn(len(minorArcanaName))] + minorArcanaNum[rand.Intn(len(minorArcanaNum))]
+						}
+
+						bot.ReplyMessage(event.ReplyToken, linebot.NewTextMessage(mesText)).Do()
 					
 					} else if message.Text=="艾路"{
 						bot.ReplyMessage(event.ReplyToken, linebot.NewTextMessage("卡娜赫拉")).Do()

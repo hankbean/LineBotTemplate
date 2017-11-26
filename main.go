@@ -208,31 +208,31 @@ func callbackHandler(w http.ResponseWriter, r *http.Request) {
 						}
 						
 						minorArcanaName := []string{
-							"劍"
-							"杖"
-							"杯"
-							"幣"
+							"劍",
+							"杖",
+							"杯",
+							"幣",
 						}
 
 						minorArcanaNum := []string{
-							"1"
-							"2"
-							"3"
-							"4"
-							"5"
-							"6"
-							"7"
-							"8"
-							"9"
-							"10"
-							"侍從"
-							"騎士"
-							"皇后"
-							"國王"
+							"1",
+							"2",
+							"3",
+							"4",
+							"5",
+							"6",
+							"7",
+							"8",
+							"9",
+							"10",
+							"侍從",
+							"騎士",
+							"皇后",
+							"國王",
 						}
 
 						var ifNumA = rand.Intn(78-1)
-						
+
 						if ((1-1)<=ifNumA>=(22-1)){
 							mesText = turn[rand.Intn(len(turn))] + answers[rand.Intn(len(answers))]
 						} else {

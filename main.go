@@ -172,7 +172,7 @@ func callbackHandler(w http.ResponseWriter, r *http.Request) {
 							"大紅袍",
 						}
 						bot.ReplyMessage(event.ReplyToken, linebot.NewTextMessage(answers[rand.Intn(len(answers))])).Do()
-					} else if message.Text=="抽牌"{
+					} else if message.Text=="抽牌" || message.Text=="抽大牌"{
 						rand.Seed(time.Now().UnixNano()) // Try changing this number!
 						
 						mesText := "";
@@ -187,7 +187,7 @@ func callbackHandler(w http.ResponseWriter, r *http.Request) {
 							"魔術師",
 							"女教皇",
 							"皇后",
-							"國王",
+							"皇帝",
 							"教皇",
 							"戀人",
 							"戰車",
@@ -233,7 +233,7 @@ func callbackHandler(w http.ResponseWriter, r *http.Request) {
 
 						var ifNum = rand.Intn(78-1)
 						fmt.Println(ifNum)
-						if (ifNum >= (1-1) && ifNum < (22-1)){
+						if (message.Text=="抽大牌" || ifNum >= (1-1) && ifNum < (22-1)){
 							mesText = turn[rand.Intn(len(turn))] + majorArcana[rand.Intn(len(majorArcana))]
 						} else {
 							mesText = turn[rand.Intn(len(turn))] + minorArcanaName[rand.Intn(len(minorArcanaName))] + minorArcanaNum[rand.Intn(len(minorArcanaNum))]

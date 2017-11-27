@@ -244,7 +244,7 @@ func callbackHandler(w http.ResponseWriter, r *http.Request) {
 					} else if message.Text=="艾路"{
 						bot.ReplyMessage(event.ReplyToken, linebot.NewTextMessage("卡娜赫拉")).Do()
 
-					} else if message.Text=="厨ニ" || message.Text=="廚二"{
+					} else if message.Text=="中二" || message.Text=="廚二"{
 						rand.Seed(time.Now().UnixNano()) // Try changing this number!
 						answers := []string{
 							"爆裂吧，現實。迸裂吧，精神。放逐這個世界！",

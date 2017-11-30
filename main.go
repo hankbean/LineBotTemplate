@@ -294,6 +294,9 @@ func callbackHandler(w http.ResponseWriter, r *http.Request) {
 					} else if message.Text=="大腸包小腸"{
 						bot.ReplyMessage(event.ReplyToken, linebot.NewTextMessage("チンチン大きいです")).Do()
 
+					} else if message.Text=="文大吃吃" || message.Text=="吃吃精靈" || message.Text=="文大吃吃精靈" || message.Text=="吃吃"{
+						bot.ReplyMessage(event.ReplyToken, linebot.NewTextMessage("額咪啊")).Do()
+
 					} else {
 						rand.Seed(time.Now().UnixNano()) // Try changing this number!
 						answers := []string{

@@ -245,7 +245,10 @@ func callbackHandler(w http.ResponseWriter, r *http.Request) {
 					} else if message.Text=="骰子卡" {
 						rand.Seed(time.Now().UnixNano())
 						mesText := "" ;
-						starNum := strconv.Itoa(rand.Intn(11)+1);
+						// starNum := strconv.Itoa(rand.Intn(11)+1);
+						// signNum := strconv.Itoa(rand.Intn(11)+1);
+						// palaceNum := strconv.Itoa(rand.Intn(11)+1);
+						starNum := rand.Intn(11)+1;
 						signNum := strconv.Itoa(rand.Intn(11)+1);
 						palaceNum := strconv.Itoa(rand.Intn(11)+1);
 						star := []string {

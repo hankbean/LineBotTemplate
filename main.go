@@ -293,7 +293,7 @@ func callbackHandler(w http.ResponseWriter, r *http.Request) {
 							"11宮",
 							"12宮",
 						} 
-						mesText = star[0] + "，" + sign[12] + "，" + palace[13];
+						mesText = star[0] + "，" + sign[12] + "，" + palace[11];
 						bot.ReplyMessage(event.ReplyToken, linebot.NewTextMessage(mesText)).Do()
 
 					} else if message.Text=="進階骰子卡" {

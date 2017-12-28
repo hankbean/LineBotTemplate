@@ -326,7 +326,7 @@ func callbackHandler(w http.ResponseWriter, r *http.Request) {
 							"雙魚",
 						} 
 
-						mesText = "表象\nASC: " + asc[ascNum] + "\n月亮: " + strconv.Itoa(MoonNum+1) + "宮    太陽: " + strconv.Itoa(SunNum+1) + "宮\n水星: " + strconv.Itoa(qNum+1) + "宮    金星: " + strconv.Itoa(wNum+1) + "宮\n火星: " + strconv.Itoa(eNum+1) + "宮    木星: " + strconv.Itoa(rNum+1) + "宮\n土星: " + strconv.Itoa(tNum+1) + "宮    天王星: " + strconv.Itoa(yNum+1) + "宮\n海王星: " + strconv.Itoa(uNum+1) + "宮    冥王星: " + strconv.Itoa(iNum+1) + "宮\n\n";
+						mesText = "表象\nASC:   " + asc[ascNum] + "\n月亮: " + strconv.Itoa(MoonNum+1) + "宮    太陽: " + strconv.Itoa(SunNum+1) + "宮\n水星: " + strconv.Itoa(qNum+1) + "宮    金星: " + strconv.Itoa(wNum+1) + "宮\n火星: " + strconv.Itoa(eNum+1) + "宮    木星: " + strconv.Itoa(rNum+1) + "宮\n土星: " + strconv.Itoa(tNum+1) + "宮    天王星: " + strconv.Itoa(yNum+1) + "宮\n海王星: " + strconv.Itoa(uNum+1) + "宮    冥王星: " + strconv.Itoa(iNum+1) + "宮\n\n";
 
 						ascNum = rand.Intn(12);
 						MoonNum = rand.Intn(12);

@@ -245,9 +245,9 @@ func callbackHandler(w http.ResponseWriter, r *http.Request) {
 					} else if message.Text=="骰子卡" {
 						rand.Seed(time.Now().UnixNano())
 						mesText := "" ;
-						star := strconv.Itoa(rand.Intn(11));
-						sign := strconv.Itoa(rand.Intn(11));
-						palace := strconv.Itoa(rand.Intn(11));
+						star := strconv.Itoa(rand.Intn(11)+1);
+						sign := strconv.Itoa(rand.Intn(11)+1);
+						palace := strconv.Itoa(rand.Intn(11)+1);
 						mesText = star + sign + palace;
 						bot.ReplyMessage(event.ReplyToken, linebot.NewTextMessage(mesText)).Do()
 

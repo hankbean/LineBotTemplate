@@ -243,11 +243,11 @@ func callbackHandler(w http.ResponseWriter, r *http.Request) {
 
 					} else if message.Text=="骰子卡" {
 						rand.Seed(time.Now().UnixNano())
-						mesText := "" string;
+						mesText := "" ;
 						star := rand.Intn(11);
 						sign := rand.Intn(11);
 						palace := rand.Intn(11);
-						mesText = star + "AND" + sign + "AND" + palace;
+						mesText = star + sign + palace;
 						bot.ReplyMessage(event.ReplyToken, linebot.NewTextMessage(mesText)).Do()
 
 					} else if message.Text=="進階骰子卡" {

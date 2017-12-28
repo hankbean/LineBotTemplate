@@ -326,10 +326,7 @@ func callbackHandler(w http.ResponseWriter, r *http.Request) {
 							"雙魚",
 						} 
 
-						mesText = "表象 ASC:" + asc[ascNum] + "，月亮" + strconv.Itoa(MoonNum+1) + "，太陽" + strconv.Itoa(SunNum+1)
-						+ "，水星" + strconv.Itoa(qNum+1) + "，金星" + strconv.Itoa(wNum+1) + "，火星" + strconv.Itoa(eNum+1)
-						+ "，木星" + strconv.Itoa(rNum+1) + "，土星" + strconv.Itoa(tNum+1) + "，天王星" + strconv.Itoa(yNum+1)
-						+ "，海王星" + strconv.Itoa(uNum+1) + "，冥王星" + strconv.Itoa(iNum+1) + "宮";
+						mesText = "表象 ASC:" + asc[ascNum] + "，月亮" + strconv.Itoa(MoonNum+1) + "，太陽" + strconv.Itoa(SunNum+1) + "，水星" + strconv.Itoa(qNum+1) + "，金星" + strconv.Itoa(wNum+1) + "，火星" + strconv.Itoa(eNum+1) + "，木星" + strconv.Itoa(rNum+1) + "，土星" + strconv.Itoa(tNum+1) + "，天王星" + strconv.Itoa(yNum+1) + "，海王星" + strconv.Itoa(uNum+1) + "，冥王星" + strconv.Itoa(iNum+1) + "宮";
 
 						ascNum = rand.Intn(12);
 						MoonNum = rand.Intn(12);
@@ -343,11 +340,7 @@ func callbackHandler(w http.ResponseWriter, r *http.Request) {
 						uNum = rand.Intn(12);
 						iNum = rand.Intn(12);
 
-						mesText = mesText
-						+ "事實 ASC:" + asc[ascNum] + "，月亮" + strconv.Itoa(MoonNum+1) + "宮，太陽" + strconv.Itoa(SunNum+1)
-						+ "宮，水星" + strconv.Itoa(qNum+1) + "宮，金星" + strconv.Itoa(wNum+1) + "宮，火星" + strconv.Itoa(eNum+1)
-						+ "宮，木星" + strconv.Itoa(rNum+1) + "宮，土星" + strconv.Itoa(tNum+1) + "宮，天王星" + strconv.Itoa(yNum+1)
-						+ "宮，海王星" + strconv.Itoa(uNum+1) + "宮，冥王星" + strconv.Itoa(iNum+1) + "宮";
+						mesText = mesText + "事實 ASC:" + asc[ascNum] + "，月亮" + strconv.Itoa(MoonNum+1) + "宮，太陽" + strconv.Itoa(SunNum+1) + "宮，水星" + strconv.Itoa(qNum+1) + "宮，金星" + strconv.Itoa(wNum+1) + "宮，火星" + strconv.Itoa(eNum+1) + "宮，木星" + strconv.Itoa(rNum+1) + "宮，土星" + strconv.Itoa(tNum+1) + "宮，天王星" + strconv.Itoa(yNum+1) + "宮，海王星" + strconv.Itoa(uNum+1) + "宮，冥王星" + strconv.Itoa(iNum+1) + "宮";
 						bot.ReplyMessage(event.ReplyToken, linebot.NewTextMessage(mesText)).Do()
 					
 					} else if message.Text=="艾路"{

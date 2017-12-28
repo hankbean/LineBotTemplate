@@ -323,6 +323,7 @@ func callbackHandler(w http.ResponseWriter, r *http.Request) {
 							"摩羯",
 							"水瓶",
 							"雙魚",
+						} 
 						mesText = "ASC:" + asc[ascNum] + "/n，月亮" + strconv.Itoa(MoonNum) + "/n太陽，" + strconv.Itoa(SunNum);
 						bot.ReplyMessage(event.ReplyToken, linebot.NewTextMessage(mesText)).Do()
 					

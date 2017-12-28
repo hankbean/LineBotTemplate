@@ -245,10 +245,24 @@ func callbackHandler(w http.ResponseWriter, r *http.Request) {
 					} else if message.Text=="骰子卡" {
 						rand.Seed(time.Now().UnixNano())
 						mesText := "" ;
-						star := strconv.Itoa(rand.Intn(11)+1);
-						sign := strconv.Itoa(rand.Intn(11)+1);
-						palace := strconv.Itoa(rand.Intn(11)+1);
-						mesText = star + sign + palace;
+						starNum := strconv.Itoa(rand.Intn(11)+1);
+						signNum := strconv.Itoa(rand.Intn(11)+1);
+						palaceNum := strconv.Itoa(rand.Intn(11)+1);
+						star := []string {
+							"月亮",
+							"水星",
+							"金星",
+							"地球",
+							"火星",
+							"木星",
+							"土星",
+							"天王星",
+							"海王星",
+							"冥王星",
+							"凱隆星",
+							"北交點",
+						} 
+						mesText = star[starNum] + "***" + signNum + "***" + palaceNum;
 						bot.ReplyMessage(event.ReplyToken, linebot.NewTextMessage(mesText)).Do()
 
 					} else if message.Text=="進階骰子卡" {

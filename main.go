@@ -299,6 +299,31 @@ func callbackHandler(w http.ResponseWriter, r *http.Request) {
 					} else if message.Text=="進階骰子卡" {
 						rand.Seed(time.Now().UnixNano())
 						mesText := "";
+						ascNum := rand.Intn(12);
+						MoonNum := rand.Intn(12);
+						SunNum := rand.Intn(12);
+						// qNum := rand.Intn(12);
+						// wNum := rand.Intn(12);
+						// eNum := rand.Intn(12);
+						// rNum := rand.Intn(12);
+						// tNum := rand.Intn(12);
+						// yNum := rand.Intn(12);
+						// uNum := rand.Intn(12);
+						// iNum := rand.Intn(12);
+						asc := []string {
+							"白羊",
+							"金牛",
+							"雙子",
+							"巨蟹",
+							"獅子",
+							"處女",
+							"天秤",
+							"天蝎",
+							"射手",
+							"摩羯",
+							"水瓶",
+							"雙魚",
+						mesText = "ASC:" + asc[ascNum] + "/n，月亮" + strconv.Itoa(MoonNum) + "/n太陽，" + strconv.Itoa(SunNum);
 						bot.ReplyMessage(event.ReplyToken, linebot.NewTextMessage(mesText)).Do()
 					
 					} else if message.Text=="艾路"{

@@ -240,6 +240,20 @@ func callbackHandler(w http.ResponseWriter, r *http.Request) {
 						}
 
 						bot.ReplyMessage(event.ReplyToken, linebot.NewTextMessage(mesText)).Do()
+
+					} else if message.Text=="骰子卡" {
+						rand.Seed(time.Now().UnixNano())cx
+						mesText := "";
+						star = rand.Intn(len(turn));
+						sign = rand.Intn(len(turn));
+						palace = rand.Intn(len(turn));
+						mesText = star + "***" + sign + "***" + palace;
+						bot.ReplyMessage(event.ReplyToken, linebot.NewTextMessage(mesText)).Do()
+
+					} else if message.Text=="進階骰子卡" {
+						rand.Seed(time.Now().UnixNano())cx
+						mesText := "";
+						bot.ReplyMessage(event.ReplyToken, linebot.NewTextMessage(mesText)).Do()
 					
 					} else if message.Text=="艾路"{
 						bot.ReplyMessage(event.ReplyToken, linebot.NewTextMessage("卡娜赫拉")).Do()
@@ -354,7 +368,7 @@ func callbackHandler(w http.ResponseWriter, r *http.Request) {
 						var ifNum = rand.Intn(9)
 						if (ifNum==0){
 							bot.ReplyMessage(event.ReplyToken, linebot.NewTextMessage(answers[rand.Intn(len(answers))])).Do()
-						} else {
+						// } else {
 							//bot.ReplyMessage(event.ReplyToken, linebot.NewTextMessage("debug: "+ifNum)).Do()
 						}
 						//bot.ReplyMessage(event.ReplyToken, linebot.NewTextMessage("指令清單\r\n"+"早餐/午餐/晚餐\r\n今日運勢")).Do()

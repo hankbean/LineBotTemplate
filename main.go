@@ -247,7 +247,7 @@ func callbackHandler(w http.ResponseWriter, r *http.Request) {
 						star := rand.Intn(11);
 						sign := rand.Intn(11);
 						palace := rand.Intn(11);
-						mesText = star + "***" + sign + "***" + palace;
+						mesText = star + "__" + sign + "__" + palace;
 						bot.ReplyMessage(event.ReplyToken, linebot.NewTextMessage(mesText)).Do()
 
 					} else if message.Text=="進階骰子卡" {

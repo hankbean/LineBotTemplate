@@ -242,7 +242,7 @@ func callbackHandler(w http.ResponseWriter, r *http.Request) {
 						bot.ReplyMessage(event.ReplyToken, linebot.NewTextMessage(mesText)).Do()
 
 					} else if message.Text=="骰子卡" {
-						rand.Seed(time.Now().UnixNano())cx
+						rand.Seed(time.Now().UnixNano())
 						mesText := "";
 						star = rand.Intn(len(turn));
 						sign = rand.Intn(len(turn));
@@ -251,7 +251,7 @@ func callbackHandler(w http.ResponseWriter, r *http.Request) {
 						bot.ReplyMessage(event.ReplyToken, linebot.NewTextMessage(mesText)).Do()
 
 					} else if message.Text=="進階骰子卡" {
-						rand.Seed(time.Now().UnixNano())cx
+						rand.Seed(time.Now().UnixNano())
 						mesText := "";
 						bot.ReplyMessage(event.ReplyToken, linebot.NewTextMessage(mesText)).Do()
 					

@@ -248,14 +248,14 @@ func callbackHandler(w http.ResponseWriter, r *http.Request) {
 						// starNum := strconv.Itoa(rand.Intn(11)+1);
 						// signNum := strconv.Itoa(rand.Intn(11)+1);
 						// palaceNum := strconv.Itoa(rand.Intn(11)+1);
-						starNum := rand.Intn(11)+1;
-						signNum := strconv.Itoa(rand.Intn(11)+1);
-						palaceNum := strconv.Itoa(rand.Intn(11)+1);
+						starNum := rand.Intn(11);
+						signNum := rand.Intn(11);
+						palaceNum := rand.Intn(11);
 						star := []string {
 							"月亮",
 							"水星",
 							"金星",
-							"地球",
+							"太陽",
 							"火星",
 							"木星",
 							"土星",
@@ -265,7 +265,35 @@ func callbackHandler(w http.ResponseWriter, r *http.Request) {
 							"凱隆星",
 							"北交點",
 						} 
-						mesText = star[starNum] + "***" + signNum + "***" + palaceNum;
+						sign := []string {
+							"白羊",
+							"金牛",
+							"雙子",
+							"巨蟹",
+							"獅子",
+							"處女",
+							"天秤",
+							"天蝎",
+							"射手",
+							"摩羯",
+							"水瓶",
+							"雙魚",
+						} 
+						palace := []string {
+							"1宮",
+							"2宮",
+							"3宮",
+							"4宮",
+							"5宮",
+							"6宮",
+							"7宮",
+							"8宮",
+							"9宮",
+							"10宮",
+							"11宮",
+							"12宮",
+						} 
+						mesText = star[starNum] + "，" + sign[signNum] + "，" + palace[palaceNum];
 						bot.ReplyMessage(event.ReplyToken, linebot.NewTextMessage(mesText)).Do()
 
 					} else if message.Text=="進階骰子卡" {

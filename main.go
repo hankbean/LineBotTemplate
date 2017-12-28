@@ -19,6 +19,7 @@ import (
 	"os"
 	"math/rand"
 	"time"
+	"strconv"
 	
 	"github.com/line/line-bot-sdk-go/linebot"
 )
@@ -244,9 +245,9 @@ func callbackHandler(w http.ResponseWriter, r *http.Request) {
 					} else if message.Text=="骰子卡" {
 						rand.Seed(time.Now().UnixNano())
 						mesText := "" ;
-						star := string(rand.Intn(11));
-						sign := string(rand.Intn(11));
-						palace := string(rand.Intn(11));
+						star := strconv.Itoa(rand.Intn(11));
+						sign := strconv.Itoa(rand.Intn(11));
+						palace := strconv.Itoa(rand.Intn(11));
 						mesText = star + sign + palace;
 						bot.ReplyMessage(event.ReplyToken, linebot.NewTextMessage(mesText)).Do()
 

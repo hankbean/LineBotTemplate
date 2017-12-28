@@ -297,19 +297,20 @@ func callbackHandler(w http.ResponseWriter, r *http.Request) {
 						bot.ReplyMessage(event.ReplyToken, linebot.NewTextMessage(mesText)).Do()
 
 					} else if message.Text=="進階骰子卡" {
+
 						rand.Seed(time.Now().UnixNano())
 						mesText := "";
 						ascNum := rand.Intn(12);
 						MoonNum := rand.Intn(12);
 						SunNum := rand.Intn(12);
-						// qNum := rand.Intn(12);
-						// wNum := rand.Intn(12);
-						// eNum := rand.Intn(12);
-						// rNum := rand.Intn(12);
-						// tNum := rand.Intn(12);
-						// yNum := rand.Intn(12);
-						// uNum := rand.Intn(12);
-						// iNum := rand.Intn(12);
+						qNum := rand.Intn(12);
+						wNum := rand.Intn(12);
+						eNum := rand.Intn(12);
+						rNum := rand.Intn(12);
+						tNum := rand.Intn(12);
+						yNum := rand.Intn(12);
+						uNum := rand.Intn(12);
+						iNum := rand.Intn(12);
 						asc := []string {
 							"白羊",
 							"金牛",
@@ -324,7 +325,29 @@ func callbackHandler(w http.ResponseWriter, r *http.Request) {
 							"水瓶",
 							"雙魚",
 						} 
-						mesText = "ASC:" + asc[ascNum] + "/n，月亮" + strconv.Itoa(MoonNum) + "/n太陽，" + strconv.Itoa(SunNum);
+
+						mesText = "表象 ASC:" + asc[ascNum] + "，月亮" + strconv.Itoa(MoonNum+1) + "，太陽" + strconv.Itoa(SunNum+1)
+						+ "，水星" + strconv.Itoa(qNum+1) + "，金星" + strconv.Itoa(wNum+1) + "，火星" + strconv.Itoa(eNum+1)
+						+ "，木星" + strconv.Itoa(rNum+1) + "，土星" + strconv.Itoa(tNum+1) + "，天王星" + strconv.Itoa(yNum+1)
+						+ "，海王星" + strconv.Itoa(uNum+1) + "，冥王星" + strconv.Itoa(iNum+1) + "宮";
+
+						ascNum := rand.Intn(12);
+						MoonNum := rand.Intn(12);
+						SunNum := rand.Intn(12);
+						qNum := rand.Intn(12);
+						wNum := rand.Intn(12);
+						eNum := rand.Intn(12);
+						rNum := rand.Intn(12);
+						tNum := rand.Intn(12);
+						yNum := rand.Intn(12);
+						uNum := rand.Intn(12);
+						iNum := rand.Intn(12);
+
+						mesText = mesText
+						+ "事實 ASC:" + asc[ascNum] + "，月亮" + strconv.Itoa(MoonNum+1) + "宮，太陽" + strconv.Itoa(SunNum+1)
+						+ "宮，水星" + strconv.Itoa(qNum+1) + "宮，金星" + strconv.Itoa(wNum+1) + "宮，火星" + strconv.Itoa(eNum+1)
+						+ "宮，木星" + strconv.Itoa(rNum+1) + "宮，土星" + strconv.Itoa(tNum+1) + "宮，天王星" + strconv.Itoa(yNum+1)
+						+ "宮，海王星" + strconv.Itoa(uNum+1) + "宮，冥王星" + strconv.Itoa(iNum+1) + "宮";
 						bot.ReplyMessage(event.ReplyToken, linebot.NewTextMessage(mesText)).Do()
 					
 					} else if message.Text=="艾路"{

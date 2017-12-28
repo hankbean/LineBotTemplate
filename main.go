@@ -243,7 +243,7 @@ func callbackHandler(w http.ResponseWriter, r *http.Request) {
 
 					} else if message.Text=="骰子卡" {
 						rand.Seed(time.Now().UnixNano())
-						mesText := "";
+						mesText := "" string;
 						star := rand.Intn(11);
 						sign := rand.Intn(11);
 						palace := rand.Intn(11);
